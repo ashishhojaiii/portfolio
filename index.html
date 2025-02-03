@@ -17,95 +17,83 @@
     html,body{
         width:100%;
         height:100%;
-
     }
-canvas{
-  z-index:-1
-}
-   
+    canvas{
+        z-index:-1;
+    }
 </style>
 <body class="w-screen h-screen">
-    <div class="w-full h-[10%]  flex flex-wrap">
-    <nav class="w-full">
-        <ul class="w-full flex justify-around font-bold">
-            <li>Richard</li>
-            <li>Currently Student at University</li>
-            <li>Based in London</li>
-            <li>work , About , Contact</li>
-        </ul>
-    </nav>
+    <div class="w-full h-[10%] flex flex-wrap">
+        <nav class="w-full">
+            <ul class="w-full flex justify-around font-bold text-xs sm:text-sm md:text-base lg:text-lg">
+                <li>Richard</li>
+                <li>Currently Student at University</li>
+                <li>Based in London</li>
+                <li>work , About , Contact</li>
+            </ul>
+        </nav>
     </div>
 
-<!-----HERO SECTION-->
-<div class="z-10 relative overflow-hidden">
-    <h1 class="text-8xl">CREATIVE</h1>
-    <h1 class="text-8xl">DEVELOPER</h1>
-      <div class="relative">
-      <img src="pic_2.jpg" alt="profile_pic" class="w-[30%] h-[30%] border-2 min-w-[20%] min-h-[30%] object-cover liquid-image">
-    
-</div>
+    <!-- HERO SECTION-->
+    <div class="z-10 relative overflow-hidden">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl">CREATIVE</h1>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl">DEVELOPER</h1>
+        <div class="relative">
+            <img src="pic_2.jpg" alt="profile_pic" class="w-[50%] sm:w-[40%] md:w-[30%] lg:w-[20%] h-auto border-2 min-w-[20%] min-h-[30%] object-cover liquid-image mx-auto">
+        </div>
 
-    <!----MID -SECTION -->
-    <div class="mt-[10%] w-full h-[120vh] flex flex-col items-center border-2">
-      <h3 class="w-[40%] text-2xl z-10 text-center">
-          I SUPPORT DESIGNERS AND AGENCIES WITH CREATIVE DEVELOPMENT
-      </h3>
-  
-      <!-- Arrow moved to a new div for proper positioning -->
-      <div class="w-full flex justify-center items-center p-4">
-          <span class="material-symbols-outlined text-6xl">
-              arrow_downward
-          </span>
-      </div>
-  
-      <div class="w-[40%] border-red-500 h-[20%] overflow-hidden flex gap-x-2">
-          <h1 class="box text-8xl z-10 pt-[5px]">R</h1>
-          <h1 class="box text-8xl z-10 pt-[5px]">I</h1>
-          <h1 class="box text-8xl z-10 pt-[5px]">C</h1>
-          <h1 class="box text-8xl z-10 pt-[5px]">H</h1>
-          <h1 class="box text-8xl z-10 pt-[5px]">A</h1>
-          <h1 class="box text-8xl z-10 pt-[5px]">R</h1>
-          <h1 class="box text-8xl z-10 pt-[5px]">D</h1>
-      </div>
-  </div>
-  
+        <!-- MID -SECTION -->
+        <div class="mt-[10%] w-full h-[120vh] flex flex-col items-center border-2">
+            <h3 class="w-[80%] sm:w-[60%] md:w-[40%] text-2xl z-10 text-center">
+                I SUPPORT DESIGNERS AND AGENCIES WITH CREATIVE DEVELOPMENT
+            </h3>
 
+            <div class="w-full flex justify-center items-center p-4">
+                <span class="material-symbols-outlined text-6xl">
+                    arrow_downward
+                </span>
+            </div>
 
-    <div id="mouse" class="bg-white text-black text-sm font-semibold flex items-center justify-center rounded-full w-24 h-24 absolute pointer-events-none transform -translate-x-1/2 -translate-y-1/2 shadow-lg">  
-        Drag Me
+            <div class="w-[80%] sm:w-[60%] md:w-[40%] lg:w-[30%] border-red-500 h-[20%] overflow-hidden flex gap-x-2">
+                <h1 class="box text-6xl sm:text-8xl z-10 pt-[5px]">R</h1>
+                <h1 class="box text-6xl sm:text-8xl z-10 pt-[5px]">I</h1>
+                <h1 class="box text-6xl sm:text-8xl z-10 pt-[5px]">C</h1>
+                <h1 class="box text-6xl sm:text-8xl z-10 pt-[5px]">H</h1>
+                <h1 class="box text-6xl sm:text-8xl z-10 pt-[5px]">A</h1>
+                <h1 class="box text-6xl sm:text-8xl z-10 pt-[5px]">R</h1>
+                <h1 class="box text-6xl sm:text-8xl z-10 pt-[5px]">D</h1>
+            </div>
+        </div>
+
+        <div id="mouse" class="bg-white text-black text-sm font-semibold flex items-center justify-center rounded-full w-16 sm:w-20 md:w-24 lg:w-24 h-16 sm:h-20 md:h-24 lg:h-24 absolute pointer-events-none transform -translate-x-1/2 -translate-y-1/2 shadow-lg">
+            Drag Me
+        </div>
+
+        <div class='a text-4xl sm:text-6xl md:text-8xl h-[100vh] flex justify-around '>
+            <h1 class="b h-[100%]">I BUILD</h1>
+            <h1 class="c h-[100%]">I CODE</h1>
+        </div>
+
+        <div class="mt-[10vh] h-[100vh]">
+            <h1 class="text-2xl text-center w-full">RECENT PROJECTS</h1>
+            <div class="mt-[20vh] pl-[5vh] sm:pl-[10vh] md:pl-[10vh] relative">
+                <h1 class="text-4xl sm:text-6xl">CHAT APP</h1>
+                <div class="underline bg-black h-[4px] w-[10px] absolute left-0 bottom-0" id="underline1"></div>
+            </div>
+            <h1 class="mt-[5vh] pl-[5vh] sm:pl-[8vh] text-2xl">Real-time WhatsApp-like chatting</h1>
+            <a href="https://github.com/ashishhojaiii/chatApp"> <img src="chatapp.jpg" class="ml-[5vw] sm:ml-[8vw] md:ml-[10vw] lg:ml-[10vw] w-[80vw] sm:w-[60vw] md:w-[50vw] lg:w-[40vw] h-auto" alt=""></a>
+        </div>
+
+        <div class="mt-[80vh] h-[100vh]">
+            <h1 class="text-4xl sm:text-6xl md:text-8xl">YOUTUBE SUMMARY</h1>
+            <div class="underline bg-black h-[4px] w-[10px] absolute left-0 bottom-0" id="underline2"></div>
+            <a href="https://github.com/ashishhojaiii/youtubeSummarizer">
+                <img src="summary.jpg" class="ml-[5vw] sm:ml-[8vw] md:ml-[10vw] lg:ml-[10vw] w-[80vw] sm:w-[60vw] md:w-[50vw] lg:w-[40vw] h-auto" alt="">
+            </a>
+        </div>
+
+        <canvas id="canvas" class="mt-[80vh] border border-pink-500 w-full h-[100vh]"></canvas>
     </div>
-    
-  
-
-    <div class='a text-8xl h-[100vh] flex justify-around '>
-      <h1 class="b h[100%]">I BUILD </h1>
-      <h1 class="c h-[100%]">I CODE</h1>
-    </div>
-
-
-
-
-    <div class="mt-[10vh] h-[100vh]">
-      <h1 class="text-2xl text-center w-full">RECENT PROJECTS</h1>
-      <div class="mt-[20vh] pl-[10vh] relative">
-        <h1 class="text-6xl">CHAT APP</h1>
-        <div class="underline bg-black h-[4px] w-[10px] absolute left-0 bottom-0" id="underline1"></div>
-      </div>
-      <h1 class="mt-[5vh] pl-[8vh] text-2xl">Real-time WhatsApp-like chatting</h1>
-      <a href="https://github.com/ashishhojaiii/chatApp"> <img src="chatapp.jpg" class="ml-[10vw] w-[40vw] h-[90vh]" alt=""></a>
-    </div>
-    
-    <div class="mt-[80vh] h-[100vh]">
-      <h1 class="text-6xl">YOUTUBE SUMMARY</h1>
-      <div class="underline bg-black h-[4px] w-[10px] absolute left-0 bottom-0" id="underline2"></div>
-     <a href="https://github.com/ashishhojaiii/youtubeSummarizer"><img src="summary.jpg" class="ml-[10vw] w-[40vw] h-[90vh]" alt=""></a>
-    </div>
-
-
-
-    <canvas id="canvas" class="mt-[80vh] border border-pink-500 w-full h-[100vh]"></canvas>
-  
-    
 
 
     <script>
