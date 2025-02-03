@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_downward" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    html,body{
+        width:100%;
+        height:100%;
+
+    }
+canvas{
+  z-index:-1
+}
+   
+</style>
+<body class="w-screen h-screen">
+    <div class="w-full h-[10%]  flex flex-wrap">
+    <nav class="w-full">
+        <ul class="w-full flex justify-around font-bold">
+            <li>Richard</li>
+            <li>Currently Student at University</li>
+            <li>Based in London</li>
+            <li>work , About , Contact</li>
+        </ul>
+    </nav>
+    </div>
+
+<!-----HERO SECTION-->
+<div class="z-10 relative overflow-hidden">
+    <h1 class="text-8xl">CREATIVE</h1>
+    <h1 class="text-8xl">DEVELOPER</h1>
+      <div class="relative">
+      <img src="pic_2.jpg" alt="profile_pic" class="w-[30%] h-[30%] border-2 min-w-[20%] min-h-[30%] object-cover liquid-image">
+    
+</div>
+
+    <!----MID -SECTION -->
+    <div class="mt-[10%] w-full h-[120vh] flex flex-col items-center border-2">
+      <h3 class="w-[40%] text-2xl z-10 text-center">
+          I SUPPORT DESIGNERS AND AGENCIES WITH CREATIVE DEVELOPMENT
+      </h3>
+  
+      <!-- Arrow moved to a new div for proper positioning -->
+      <div class="w-full flex justify-center items-center p-4">
+          <span class="material-symbols-outlined text-6xl">
+              arrow_downward
+          </span>
+      </div>
+  
+      <div class="w-[40%] border-red-500 h-[20%] overflow-hidden flex gap-x-2">
+          <h1 class="box text-8xl z-10 pt-[5px]">R</h1>
+          <h1 class="box text-8xl z-10 pt-[5px]">I</h1>
+          <h1 class="box text-8xl z-10 pt-[5px]">C</h1>
+          <h1 class="box text-8xl z-10 pt-[5px]">H</h1>
+          <h1 class="box text-8xl z-10 pt-[5px]">A</h1>
+          <h1 class="box text-8xl z-10 pt-[5px]">R</h1>
+          <h1 class="box text-8xl z-10 pt-[5px]">D</h1>
+      </div>
+  </div>
+  
+
+
+    <div id="mouse" class="bg-white text-black text-sm font-semibold flex items-center justify-center rounded-full w-24 h-24 absolute pointer-events-none transform -translate-x-1/2 -translate-y-1/2 shadow-lg">  
+        Drag Me
+    </div>
+    
+  
+
+    <div class='a text-8xl h-[100vh] flex justify-around '>
+      <h1 class="b h[100%]">I BUILD </h1>
+      <h1 class="c h-[100%]">I CODE</h1>
+    </div>
+
+
+
+
+    <div class="mt-[10vh] h-[100vh]">
+      <h1 class="text-2xl text-center w-full">RECENT PROJECTS</h1>
+      <div class="mt-[20vh] pl-[10vh] relative">
+        <h1 class="text-6xl">CHAT APP</h1>
+        <div class="underline bg-black h-[4px] w-[10px] absolute left-0 bottom-0" id="underline1"></div>
+      </div>
+      <h1 class="mt-[5vh] pl-[8vh] text-2xl">Real-time WhatsApp-like chatting</h1>
+      <a href="https://github.com/ashishhojaiii/chatApp"> <img src="chatapp.jpg" class="ml-[10vw] w-[40vw] h-[90vh]" alt=""></a>
+    </div>
+    
+    <div class="mt-[80vh] h-[100vh]">
+      <h1 class="text-6xl">YOUTUBE SUMMARY</h1>
+      <div class="underline bg-black h-[4px] w-[10px] absolute left-0 bottom-0" id="underline2"></div>
+     <a href="https://github.com/ashishhojaiii/youtubeSummarizer"><img src="summary.jpg" class="ml-[10vw] w-[40vw] h-[90vh]" alt=""></a>
+    </div>
+
+
+
+    <canvas id="canvas" class="mt-[80vh] border border-pink-500 w-full h-[100vh]"></canvas>
+  
+    
+
+
+    <script>
+        gsap.from('.box' , {
+        scrollTrigger:{
+            trigger:'.box',
+          
+        },
+        y:100,
+     stagger:0.2,
+     duration:1,
+     ease:'power2.out'
+        })
+   
+        gsap.fromTo("#underline1", 
+    { width: "10px" }, 
+    {
+      width: "20%",
+      duration: 1.5,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: "#underline1",
+        start: "top 80%",  // Adjust start position
+        end: "top 50%",
+        scrub: 1
+      }
+    });
+
+  // Animate underline for "YOUTUBE SUMMARY" section
+  gsap.fromTo("#underline2", 
+    { width: "10px" }, 
+    {
+      width: "20%",
+      duration: 1.5,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: "#underline2",
+        start: "top 80%",  // Adjust start position
+        end: "top 50%",
+        scrub: 1
+      }
+    });
+
+
+  
+let mouse = document.getElementById("mouse");
+window.addEventListener("mousemove" , (e)=>{
+
+    const scrollY = window.scrollY
+mouse.style.left=e.clientX+"px"
+mouse.style.top=(e.clientY+scrollY)+"px"
+})
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+//canvas.width = window.innerWidth
+//canvas.height = window.innerHeight
+
+// Array of image file names
+const imageNames = [
+  "ezgif-frame-001.jpg", "ezgif-frame-002.jpg", "ezgif-frame-003.jpg", 
+  "ezgif-frame-004.jpg", "ezgif-frame-005.jpg", "ezgif-frame-006.jpg", 
+  "ezgif-frame-007.jpg", "ezgif-frame-008.jpg", "ezgif-frame-009.jpg", 
+  "ezgif-frame-010.jpg", "ezgif-frame-011.jpg", "ezgif-frame-012.jpg", 
+  "ezgif-frame-013.jpg", "ezgif-frame-014.jpg", "ezgif-frame-015.jpg", 
+  "ezgif-frame-016.jpg", "ezgif-frame-017.jpg", "ezgif-frame-018.jpg", 
+  "ezgif-frame-019.jpg", "ezgif-frame-020.jpg", "ezgif-frame-021.jpg", 
+  "ezgif-frame-022.jpg", "ezgif-frame-023.jpg", "ezgif-frame-024.jpg", 
+  "ezgif-frame-025.jpg", "ezgif-frame-026.jpg", "ezgif-frame-027.jpg", 
+  "ezgif-frame-028.jpg", "ezgif-frame-029.jpg", "ezgif-frame-030.jpg", 
+  "ezgif-frame-031.jpg", "ezgif-frame-032.jpg", "ezgif-frame-033.jpg", 
+  "ezgif-frame-034.jpg", "ezgif-frame-035.jpg", "ezgif-frame-036.jpg", 
+  "ezgif-frame-037.jpg", "ezgif-frame-038.jpg", "ezgif-frame-039.jpg", 
+  "ezgif-frame-040.jpg", "ezgif-frame-041.jpg", "ezgif-frame-042.jpg", 
+  "ezgif-frame-043.jpg", "ezgif-frame-044.jpg", "ezgif-frame-045.jpg", 
+  "ezgif-frame-046.jpg", "ezgif-frame-047.jpg", "ezgif-frame-048.jpg", 
+  "ezgif-frame-049.jpg", "ezgif-frame-050.jpg"
+];
+
+const images = [];
+let imagesLoaded = 0;
+
+// Load images
+imageNames.forEach((src, index) => {
+    const img = new Image();
+    img.onload = () => {
+        images[index] = img; // Store in the correct index
+        imagesLoaded++;
+        if (imagesLoaded === imageNames.length) {
+            console.log("All images loaded:", images); // Debugging
+            drawImage(0); // Draw the first frame when all images are loaded
+            setupScrollTrigger(); // Start scrollTrigger after all images are loaded
+        }
+    };
+    img.src = src; // Set the image source after the onload
+});
+
+// Draw image on canvas
+function drawImage(index) {
+    if (!images[index]) return; // Prevent undefined images from being drawn
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(images[index], 0, 0, canvas.width, canvas.height);
+}
+
+function setupScrollTrigger() {
+    gsap.to({ frame: 0 }, {
+        frame: imageNames.length - 1,
+        snap: "frame", 
+        ease: "none",
+        scrollTrigger: {
+            trigger: canvas,
+            pin:true,
+            start: "top 0%", // Start when the canvas hits the top of the viewport
+            end: "+=300%", // Continue until the canvas reaches the bottom of the viewport
+            scrub: 1,
+           // Debugging markers
+            pin: true, // Pin the canvas to allow for proper scroll animation
+        },
+        onUpdate: function () {
+            drawImage(Math.round(this.targets()[0].frame)); // Draw the current frame based on scroll
+        }
+    });
+}
+
+
+
+
+
+gsap.from(".b", {
+    x: "-100%",
+    opacity: 0,
+    duration: 1.5,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".b",
+        start: "top 80%", 
+        end: "top 20%",
+        scrub: 1,
+        pin:true
+    }
+});
+
+gsap.from(".c", {
+    x: "100%",
+    opacity: 0,
+    duration: 1.5,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".c",
+        start: "top 80%", 
+        end: "top 20%",
+        scrub: 1,
+        pin:true
+    }
+});
+
+    </script>
+</body>
+</html>
